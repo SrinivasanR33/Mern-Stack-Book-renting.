@@ -1,0 +1,56 @@
+.sidbar {
+  position: absolute;
+
+  width: 17em;
+  height: 100vh;
+  top: 10;
+  transition: 0.3s;
+  background-image: linear-gradient(
+    to top,
+    lightgrey 0%,
+    lightgrey 1%,
+    #e0e0e0 26%,
+    #efefef 48%,
+    #d9d9d9 75%,
+    #bcbcbc 100%
+  );
+}
+@media (max-width: 1092px) {
+  .sidbar {
+    position: absolute;
+    width: 0;
+    left: 0;
+    transition: 1s;
+  }
+}
+@media (max-width: 1092px) {
+  .sidbar .mainitem {
+    display: none;
+    position: absolute;
+    width: 0;
+    left: 0;
+  }
+}
+.mainitem {
+  display: flex;
+  flex-direction: column;
+}
+.mainitem .icon {
+  font-size: 20px;
+  padding: 10px;
+}
+.icon-text {
+  padding: 10px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+.mainitem .smallitem {
+  padding: 10px;
+  display: flex;
+}
+.smallitem:hover {
+  padding: 10px;
+  background-image: linear-gradient(to left, #cc208e 0%, #6713d2 100%);
+  color: white;
+  translate: 1s;
+}

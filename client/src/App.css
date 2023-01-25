@@ -1,0 +1,13 @@
+.menu {
+  width: 77%;
+  position: relative;
+  left: 20rem;
+}
+@media (max-width: 1092px) {
+  .menu {
+    transition: width 0.25s ease, margin 0.25s ease;
+    position: absolute;
+    left: 0rem;
+    width: 100%;
+  }
+}

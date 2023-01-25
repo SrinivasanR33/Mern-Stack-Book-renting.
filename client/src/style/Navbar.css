@@ -1,0 +1,38 @@
+.navback {
+  width: 100%;
+  height: 4rem;
+  background-image: linear-gradient(
+    to right,
+    #53e7c7 0%,
+    #fddfcd 24%,
+    #f7d5d9 30%,
+    #e7627d 46%,
+    #b8235a 59%,
+    #801357 71%,
+    #72035c 84%,
+    #2c09ca 100%
+  );
+}
+
+.items {
+  background: -webkit-linear-gradient(rgb(185, 191, 224), rgb(7, 7, 7));
+  font-size: 20px;
+  font: bold;
+  font-weight: 900;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+.items:hover {
+  background-image: linear-gradient(-30deg, #6f21c9 50%, #ec0b16 50%);
+}
+.nav-items {
+  padding: 15px;
+}
+.nav-items2 {
+  padding: 15px;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+}
