@@ -24,7 +24,8 @@ function App() {
   const role = localStorage.getItem("role");
   const dispatch = useDispatch();
 
-  const { loginstate } = useSelector((state) => state.Books);
+  // const { loginstate } = useSelector((state) => state.Books);
+  const { getBooklist, loginstate } = useSelector((state) => state.Books);
 
   console.log(loginstate);
 
@@ -32,7 +33,7 @@ function App() {
   return (
     <Router>
       <ToastContainer />
-      {loginstate ? (
+      {loginstate === 1 ? (
         <>
           <Navbar />
           <SideBar />
@@ -40,7 +41,7 @@ function App() {
       ) : null}
       <div className="menu">
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/books/list" element={<Bookslist />} />
           <Route path="/books/search" element={<SearchBook />} />
           <Route path="/add/book" element={<Addbook />} />
@@ -48,8 +49,8 @@ function App() {
           <Route path="/login" element={<Loginpage />} />
           <Route path="/rent/book" element={<UserRentBook />} />
 
-          {loginstate ? (
-            <Route render={() => <Navigate to="/home" />} />
+          {loginstate === 1 ? (
+            <Route render={() => <Navigate to="/" />} />
           ) : (
             <Route render={() => <Navigate to="/login" />} />
           )}

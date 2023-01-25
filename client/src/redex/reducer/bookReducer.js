@@ -2,7 +2,7 @@ const initialState = {
   getBooklist: [],
   bookSearch: [],
   bookdetails: [],
-  loginstate: true,
+  loginstate: 1,
   loginData: [],
   userList: [],
   rentList: [],

@@ -11,7 +11,7 @@ function SideBar() {
   return (
     <div className="sidbar">
       <div className="mainitem">
-        <div className="smallitem" onClick={() => nav("/home")}>
+        <div className="smallitem" onClick={() => nav("/")}>
           <span className="icon">
             <AiOutlineHome />
           </span>

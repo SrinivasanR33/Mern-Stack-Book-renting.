@@ -157,14 +157,14 @@ export const addUser = (data, nav) => async (dispatch, getState) => {
         val.data.data[0].password === data.password
       ) {
         alert("email already exist");
-        dispatch({ type: "LOGIN_STATE", payload: false });
+        dispatch({ type: "LOGIN_STATE", payload: 0 });
       } else {
         api
           .post(`/add/user/`, data)
           .then((val) => {
             console.log(val);
+            dispatch({ type: "LOGIN_STATE", payload: 1 });
             alertMessage("success", "Signin Successfully");
-            dispatch({ type: "LOGIN_STATE", payload: true });
             dispatch({ type: "LOGIN_DATA", payload: val.data.data });
             nav("/");
             localStorage.setItem("role", val.data.data[0].role);
@@ -179,7 +179,7 @@ export const addUser = (data, nav) => async (dispatch, getState) => {
         .post(`/add/user/`, data)
         .then((val) => {
           console.log(val);
-          dispatch({ type: "LOGIN_STATE", payload: true });
+          dispatch({ type: "", payload: true });
           nav("/");
           dispatch({ type: "LOGIN_DATA", payload: val.data.data });
           localStorage.setItem("role", val.data.data.role);
@@ -232,7 +232,7 @@ export const loginUser = (data, nav) => async (dispatch, getState) => {
         val.data.data[0].email === data.email &&
         val.data.data[0].password === data.password
       ) {
-        dispatch({ type: "LOGIN_STATE", payload: true });
+        dispatch({ type: "LOGIN_STATE", payload: 1 });
         alertMessage("success", "Login Successfully");
         nav("/");
         localStorage.setItem("role", val.data.data[0].role);
@@ -240,7 +240,7 @@ export const loginUser = (data, nav) => async (dispatch, getState) => {
         localStorage.setItem("name", val.data.data[0].name);
         dispatch({ type: "LOGIN_DATA", payload: val.data.data });
       } else {
-        dispatch({ type: "LOGIN_STATE", payload: false });
+        dispatch({ type: "LOGIN_STATE", payload: 0 });
         alert("Bad Credencial");
       }
       return val;

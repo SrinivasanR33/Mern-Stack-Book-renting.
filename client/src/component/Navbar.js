@@ -41,7 +41,15 @@ function Navbar() {
               <Dropdown.Item
                 eventKey="1"
                 onClick={() => {
-                  dispatch({ type: "LOGIN_STATE", payload: false });
+                  dispatch({ type: "LOGIN_STATE", payload: 0 });
+                  dispatch({ type: "GET_BOOKS", payload: [] });
+                  dispatch({ type: "USER_LIST", payload: [] });
+                  dispatch({ type: "GLOBLE_LOADING", payload: [] });
+                  dispatch({ type: "GET_SEARCH_BOOK", payload: [] });
+                  dispatch({ type: "GET_BOOK_INFO", payload: [] });
+                  dispatch({ type: "LOGIN_DATA", payload: [] });
+                  dispatch({ type: "FINDUSER", payload: [] });
+                  dispatch({ type: "GET_RENTLIST", payload: [] });
                   nav("/login");
                 }}
               >
